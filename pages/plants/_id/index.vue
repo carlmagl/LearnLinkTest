@@ -16,6 +16,10 @@
 
 import Logo from '~/components/Logo.vue'
 export default {
+  validate(data){
+    //tester id parameter
+    return /^\d+$/.test(data.params.id)
+  },
   components: {
     Logo
   }
