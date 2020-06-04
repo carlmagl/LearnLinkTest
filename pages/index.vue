@@ -83,8 +83,6 @@ export default {
   letter-spacing: 1px;
 }
 
-
-
 .links {
   padding-top: 15px;
 }
