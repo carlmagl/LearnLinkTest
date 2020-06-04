@@ -21,7 +21,7 @@ export default {
   },
   components: {
     Logo
-  }, 
+  } 
  /*  asyncData(context, callback){
     setTimeout(() =>{
       callback(null, {

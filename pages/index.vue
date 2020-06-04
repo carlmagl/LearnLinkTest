@@ -4,13 +4,10 @@
       <div>
         <h1 class="title">Carls plant shit</h1>
         <h2 class="subtitle">Find my plants</h2>
-        <div
-          v-for="country in countries"
-          :key="country.name"
-          :name="country.id"
-          :capital="country.capital"
-          :population="country.population"
-        ></div>
+        <ul id="example-1">
+          <li v-for="country in getCountries" :key="country.name">{{ country.name }}</li>
+          <div>Noe her</div>
+        </ul>
       </div>
     </div>
   </div>
@@ -18,28 +15,45 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
+import Axios from "axios";
+import { mapGetters } from 'vuex'
 
+
+let state = [];
+const endpoint = "https://restcountries-v1.p.rapidapi.com/all";
 export default {
+   computed: {
+    ...mapGetters([
+      'getCountries',
+    ])
+  },
   components: {
     Logo
   },
-  asyncData(context, callback) {
-    console.log('asyncData is executed')
-    setTimeout(() => {
-     callback(null,{
-        countries: [
-          { name: "Afghanistan", capital: "Kabul", population: 25500100 },
-          { name: "Norge", capital: "Kabul", population: 25500100 },
-          { name: "Oslo", capital: "Kabul", population: 25500100 }
-        ]
-      })
-    }, 1500);
-  }
+ /*  beforeMount: () => {
+    var getData = async url => {
+      try {
+        let data = await Axios.get(url, {
+          headers: {
+            "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+            "x-rapidapi-key":
+              "b6d30ad204mshda48b7cd0cc5f9ep143885jsn188cc3b94a8c",
+            useQueryString: true
+          }
+        });
+        return data;
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    state = getData(endpoint);
+    console.log(state);
+  } */
 };
 </script>
 
 <style>
-
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -69,3 +83,11 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+</style>
