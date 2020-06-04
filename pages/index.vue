@@ -1,11 +1,16 @@
 <template>
   <div>
-    
     <div class="container">
       <div>
         <h1 class="title">Carls plant shit</h1>
         <h2 class="subtitle">Find my plants</h2>
-        
+        <div
+          v-for="country in countries"
+          :key="country.name"
+          :name="country.id"
+          :capital="country.capital"
+          :population="country.population"
+        ></div>
       </div>
     </div>
   </div>
@@ -18,15 +23,17 @@ export default {
   components: {
     Logo
   },
-  data () {
-    return {
-      posts: []
-    }
-  },
-   async fetch () {
-     console.log('Blir kjørt')
-    this.posts = await this.$http.$get( 'https://trefle.io/api/kingdoms')
-    console.log(posts)
+  asyncData(context, callback) {
+    console.log('asyncData is executed')
+    setTimeout(() => {
+     callback(null,{
+        countries: [
+          { name: "Afghanistan", capital: "Kabul", population: 25500100 },
+          { name: "Norge", capital: "Kabul", population: 25500100 },
+          { name: "Oslo", capital: "Kabul", population: 25500100 }
+        ]
+      })
+    }, 1500);
   }
 };
 </script>
@@ -62,5 +69,3 @@ export default {
 
 .links {
   padding-top: 15px;
-}
-</style>

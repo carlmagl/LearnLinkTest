@@ -4,7 +4,7 @@
       <div class="header-limiter">
         <h1>
           <a href="#">
-            Planti
+            Country
             <span>con</span>
           </a>
         </h1>

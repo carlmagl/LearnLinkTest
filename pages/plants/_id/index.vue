@@ -1,11 +1,10 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title">
-        En plante i fremtiden, med navn: {{$route.params.id}}
-      </h1>
+      <h1 class="title">{{country.name}}</h1>
       <h2 class="subtitle">
-        Find my plants {{$route.params.id}}
+        Hovedstaden er {{country.capital}}
+        Populasjonen er {{country.population}}
       </h2>
       <nuxt-link to="/">Om oss</nuxt-link>
     </div>
@@ -22,7 +21,19 @@ export default {
   },
   components: {
     Logo
-  }
+  }, 
+ /*  asyncData(context, callback){
+    setTimeout(() =>{
+      callback(null, {
+        country:{
+          {name: "Afghanistan", 
+          capital: "Kabul", 
+          population: 25500100 
+          }
+        });
+      }
+    },1000);
+  } */
 }
 </script>
 
@@ -37,8 +48,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
