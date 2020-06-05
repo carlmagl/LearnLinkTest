@@ -5,10 +5,15 @@
   "author": "Carl-Magnus Lein",
   "private": false,
   "scripts": {
-    "dev": "NUXT_PORT=process.env.PORT nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
+  },"config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3333"
+    }
   },
   "dependencies": {
     "axios": "^0.19.2",
