@@ -1,11 +1,11 @@
 <template>
   <div>
-    
+
     <div class="container">
       <div>
         <h1 class="title">Carls plant shit</h1>
         <h2 class="subtitle">Find my plants</h2>
-        
+
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@ export default {
     }
   },
    async fetch () {
-     console.log('Blir kjørt')
+    console.log('Blir kjørt')
     this.posts = await this.$http.$get( 'https://trefle.io/api/kingdoms')
     console.log(posts)
   }
