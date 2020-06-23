@@ -4,14 +4,14 @@
       <div class="header-limiter">
         <h1>
           <a href="#">
-            Planti
+            Country
             <span>con</span>
           </a>
         </h1>
         <nav>
-          <nuxt-link to="/about">About</nuxt-link>
+         <!--  <nuxt-link to="/about">About</nuxt-link>
           <nuxt-link to="/about">Noe</nuxt-link>
-          <nuxt-link to="/about">Om oss</nuxt-link>
+          <nuxt-link to="/about">Om oss</nuxt-link> -->
         </nav>
       </div>
     </header>
@@ -21,7 +21,7 @@
 
 <style>
 .header-fixed {
-  background-color: #939F5C;
+  background-color: #2A2B2A;
   box-shadow: 0 1px 1px #ccc;
   padding: 20px 40px;
   height: 80px;
@@ -57,7 +57,7 @@
 }
 
 .header-fixed .header-limiter h1 span {
-  color: #5383d3;
+  color: #35495e;
 }
 
 /* The navigation links */
@@ -85,14 +85,6 @@
   opacity: 1;
 }
 
-.header-fixed .header-limiter nav a.selected {
-  color: #608bd2;
-  pointer-events: none;
-  opacity: 1;
-}
-
-/* Fixed version of the header */
-
 body.fixed .header-fixed {
   padding: 10px 40px;
   height: 50px;
@@ -116,8 +108,6 @@ body.fixed .header-fixed .header-limiter nav {
   line-height: 28px;
   font-size: 13px;
 }
-
-/* Making the header responsive */
 
 @media all and (max-width: 600px) {
   .header-fixed {

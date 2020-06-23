@@ -16,7 +16,7 @@ export default {
 
 <style>
 body {
-  background-color: #d6ffb7;
+  background-color: #514F59;
   margin: 0;
   padding: 0;
   height: 1500px;
